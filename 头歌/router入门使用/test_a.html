@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    
+</head>
+<body>
+<div id="app">
+  <h1>Hello App!Choose the planet you want to reach</h1>
+  <p>
+
+    <!-- ---------begin_1------------- -->
+    <!-- 使用 router-link 组件来导航. -->
+    <router-link to="">Go to Earth</router-link>
+    <router-link to="/mar">Go to Mar</router-link>
+    <router-link to="/moon">Go to Moon</router-link>
+    <!-- ---------end_1------------- -->
+
+  </p>
+  <!-- 路由出口 -->
+  <!-- 路由匹配到的组件将渲染在这里 -->
+  <router-view></router-view>
+ 
+</div>
+<script>
+
+    // 1. 定义（路由）组件。
+    const Earth = { template: '<div>地球</div>' }
+    const Mar = { template: '<div>火星</div>' }
+    const Moon = { template: '<div>月球</div>' }
+
+    // -- ---------begin_2------------- 
+    // 2. 定义路由 
+    const routes = [
+    { path: '/earth', component: Earth },
+    { path: '', component: Mar },
+    { path: '', component: Moon }
+    ]
+    // -- ---------end_2------------- 
+
+    // -- ---------begin_3------------- 
+    // 3. 在router 实例中配置路由数组
+    const router = new VueRouter({
+ 
+    })
+    // -- ---------end_3------------- 
+
+    // -- ---------begin_4-------------
+    // 4. 在Vue实例中注入路由
+    const app = new Vue({
+
+    }).$mount('#app')
+    // -- ---------end_4------------- 
+
+</script>
+</body>
+</html>
